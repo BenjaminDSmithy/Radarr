@@ -112,6 +112,13 @@ namespace NzbDrone.Common.Processes
 
             var logger = LogManager.GetLogger(new FileInfo(path).Name);
 
+            _logger.Info("final path: " + path);
+
+            if (!File.Exists(path))
+            {
+                throw new FileNotFoundException("not found", path);
+            }
+
             var startInfo = new ProcessStartInfo(path, args)
             {
                 CreateNoWindow = true,

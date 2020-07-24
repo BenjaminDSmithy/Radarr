@@ -22,7 +22,7 @@ rm -f "$TEST_LOG_FILE"
 # Uncomment to log test output to a file instead of the console
 export RADARR_TESTS_LOG_OUTPUT="File"
 
-VSTEST_PARAMS="--Platform:x64 --logger:nunit;LogFilePath=TestResult.xml"
+VSTEST_PARAMS="--Platform:x64 --logger:nunit;LogFilePath=TestResult.xml --logger:console;verbosity=detailed"
 
 if [ "$PLATFORM" = "Mac" ]; then
 
