@@ -435,6 +435,7 @@ stages:
         condition: and(succeeded(), ne(variables['osName'], 'Windows'))
       - bash: |
           chmod a+x ${TESTSFOLDER}/test.sh
+          pwd
           ls -lR ${TESTSFOLDER}
           ${TESTSFOLDER}/test.sh Linux Unit Test
         displayName: Run Tests

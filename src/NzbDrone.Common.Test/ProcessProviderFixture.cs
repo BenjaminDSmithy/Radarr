@@ -180,6 +180,9 @@ namespace NzbDrone.Common.Test
             }
 
             var path = Path.Combine(TestContext.CurrentContext.TestDirectory, DummyApp.DUMMY_PROCCESS_NAME + suffix);
+
+            TestContext.Progress.WriteLine(path);
+
             var process = Subject.Start(path, onOutputDataReceived: (string data) =>
             {
                 if (data.StartsWith("Dummy process. ID:"))
